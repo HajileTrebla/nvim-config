@@ -1,6 +1,8 @@
 --lsp zero config
 local lsp = require('lsp-zero')
 
+local lspconfig = require('lspconfig')
+
 lsp.preset('recommended')
 
 lsp.ensure_installed({
@@ -52,6 +54,19 @@ vim.keymap.set('n', '<leader>hg', "<cmd>lua HoverFixed()<CR>")
 vim.o.updatetime = 250
 vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus = false})]]
 
+local lsp_flags = {
+    -- This is the default in Nvim 0.7+
+    debounce_text_changes = 150,
+}
+
+local pid = vim.fn.getpid();
+local omnisharp_bin = vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.exe"
+lspconfig['omnisharp'].setup{
+    flags = lsp_flags,
+    use_mono = true,
+    cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) }
+}
+
 --lsp configs
 require'lspconfig'.lua_ls.setup{
     settings = {
@@ -61,4 +76,29 @@ require'lspconfig'.lua_ls.setup{
             }
         }
     }
+}
+
+return {
+  lsp = {
+    config = {
+      emmet_ls = {
+        filetypes = {
+          "astro",
+          "css",
+          "eruby",
+          "html",
+          "htmldjango",
+          "javascriptreact",
+          "less",
+          "php",
+          "pug",
+          "sass",
+          "scss",
+          "svelte",
+          "typescriptreact",
+          "vue",
+        },
+      },
+    },
+  },
 }
