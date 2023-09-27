@@ -71,9 +71,9 @@ return require('packer').startup(function(use)
 	    }
   }
 
-  use( 'SirVer/ultisnips' )
-  use( 'mlaursen/vim-react-snippets' )
-  use( 'morgsmccauley/vim-react-native-snippets' )
+  --use( 'SirVer/ultisnips' )
+  --use( 'mlaursen/vim-react-snippets' )
+  --use( 'morgsmccauley/vim-react-native-snippets' )
 
 end)
 
