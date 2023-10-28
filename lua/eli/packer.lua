@@ -68,9 +68,13 @@ return require('packer').startup(function(use)
 	      -- Snippets
 	      {'L3MON4D3/LuaSnip'},             -- Required
 	      {'rafamadriz/friendly-snippets'}, -- Optional
+
+          -- Formatting
+          { 'jose-elias-alvarez/null-ls.nvim' } -- Optional
 	    }
   }
 
+  --use( '/haringsrob/laravel-dev-tools' )
   --use( 'SirVer/ultisnips' )
   --use( 'mlaursen/vim-react-snippets' )
   --use( 'morgsmccauley/vim-react-native-snippets' )

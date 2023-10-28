@@ -2,6 +2,7 @@
 local lsp = require('lsp-zero')
 
 local lspconfig = require('lspconfig')
+local config = require('lspconfig.configs')
 
 lsp.preset('recommended')
 
@@ -10,7 +11,7 @@ lsp.ensure_installed({
    'eslint',
    'lua_ls',
    'rust_analyzer',
-   'emmet_ls',
+   'emmet_language_server',
    'pyright',
    'clangd',
 })
@@ -81,7 +82,7 @@ require'lspconfig'.lua_ls.setup{
 return {
   lsp = {
     config = {
-      emmet_ls = {
+      emmet_language_server = {
         filetypes = {
           "astro",
           "css",
@@ -91,6 +92,7 @@ return {
           "javascriptreact",
           "less",
           "php",
+          "blade",
           "pug",
           "sass",
           "scss",
