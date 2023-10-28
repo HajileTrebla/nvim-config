@@ -41,10 +41,10 @@ parser_config.blade = {
 --  },
 --})
 
-local bladeGroup = vim.api.nvim_create_augroup("BladeFiltypeRelated", {})
-vim.api.nvim_create_autocmd('BufNewFile, BufRead',{
-                            pattern=".*%.blade%.php",
-                            command="set ft=blade",
-                            group = bladeGroup})
+--local bladeGroup = vim.api.nvim_create_augroup("BladeFiltypeRelated", {})
+--vim.api.nvim_create_autocmd('BufNewFile, BufRead',{
+--                            pattern=".*%.blade%.php",
+--                            command="set ft=blade",
+--                            group = bladeGroup})
 
 
